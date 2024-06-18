@@ -1,4 +1,4 @@
-package com.example.sportsground.footballGround
+package com.example.sportsground.ui.grounds.footballGround
 
 
 import androidx.compose.foundation.Canvas
@@ -13,9 +13,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sportsground.ui.theme.SportsGroundTheme
-
-val lightStadiumGreen = Color(0xFF4CBB17)
-val darkStadiumGreen = Color(0xFF3A9D23)
+import com.example.sportsground.ui.theme.darkStadiumGreen
+import com.example.sportsground.ui.theme.lightStadiumGreen
 
 
 @Composable
@@ -46,7 +45,10 @@ fun FootballGround(modifier: Modifier = Modifier) {
         }
         drawPath(path = pitchOutLine, color = Color.White, style = Stroke(3.dp.toPx()))
         drawCircle(
-            color = Color.White, radius = 10f, center = Offset(size.width / 2, size.height / 2)
+            color = Color.White, radius = 10f, center = Offset(
+                size.width / 2,
+                size.height / 2
+            )
         )
 
         drawCircle(

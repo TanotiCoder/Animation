@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sports Ground</string>
+    <string name="load_error">Can\\\'t update Ground Data\n</string>
 </resources>
