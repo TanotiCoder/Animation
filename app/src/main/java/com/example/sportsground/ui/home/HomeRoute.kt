@@ -9,7 +9,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 @Composable
 fun HomeRoute(
     homeViewModel: HomeViewModel,
-    setOnClickListener: (id: Int) -> Unit
+    setOnClickListener: (name: String) -> Unit
 ) {
     val uiState by homeViewModel.uiState.collectAsStateWithLifecycle()
     HomeRoute(uiState = uiState, setOnClickListener = setOnClickListener)
@@ -18,7 +18,7 @@ fun HomeRoute(
 @Composable
 fun HomeRoute(
     uiState: HomeUiState,
-    setOnClickListener: (id: Int) -> Unit
+    setOnClickListener: (name: String) -> Unit
 ) {
     val homeListLazyListState = rememberLazyListState()
     val groundLazyListState = when (uiState) {

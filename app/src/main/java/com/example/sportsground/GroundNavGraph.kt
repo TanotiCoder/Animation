@@ -11,10 +11,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.sportsground.data.AppContainer
+import com.example.sportsground.data.GroundData
 import com.example.sportsground.ui.grounds.cricket.CricketGround
 import com.example.sportsground.ui.grounds.footballGround.FootballGround
 import com.example.sportsground.ui.home.HomeRoute
 import com.example.sportsground.ui.home.HomeViewModel
+import com.example.sportsground.ui.parallax.Parallax
 import com.example.sportsground.ui.theme.SportsGroundTheme
 
 @Composable
@@ -27,7 +29,7 @@ fun GroundApp(appContainer: AppContainer) {
         val currentRoute =
             navBackStackEntry?.destination?.route ?: "home"
 
-        GroundNavGraph(appContainer = appContainer)
+        GroundNavGraph(appContainer = appContainer, navController = navController)
 
     }
 }
@@ -35,7 +37,7 @@ fun GroundApp(appContainer: AppContainer) {
 @Composable
 fun GroundNavGraph(
     appContainer: AppContainer,
-    navController: NavHostController = rememberNavController(),
+    navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
     NavHost(
@@ -50,15 +52,19 @@ fun GroundNavGraph(
                 factory = HomeViewModel.provideFactory(groundRepository = appContainer.groundList)
             )
             HomeRoute(homeViewModel = homeViewModel) {
-                navController.navigate(it.toString())
+                navController.navigate(it)
             }
         }
 
-        composable(route = "1") {
+        composable(route = GroundData[0].name) {
             FootballGround()
         }
-        composable("2") {
+        composable(GroundData[1].name) {
             CricketGround()
+        }
+
+        composable(GroundData[2].name) {
+            Parallax()
         }
     }
 }

@@ -20,7 +20,7 @@ import com.example.sportsground.ui.theme.SportsGroundTheme
 @Composable
 fun HomeScreen(
     uiState: HomeUiState,
-    setOnClickListener: (id: Int) -> Unit
+    setOnClickListener: (name:String) -> Unit
 ) {
     when (uiState) {
         is HomeUiState.HasGround -> {
@@ -37,7 +37,7 @@ fun HomeScreen(
 fun HomeScreen(
     modifier: Modifier = Modifier,
     list: List<GroundModel>,
-    setOnClickListener: (id: Int) -> Unit
+    setOnClickListener: (name: String) -> Unit
 ) {
     LazyColumn(
         modifier = modifier.padding(16.dp),
@@ -55,11 +55,11 @@ fun HomeScreen(
 fun HomeElement(
     modifier: Modifier = Modifier,
     groundModel: GroundModel,
-    setOnClickListener: (id: Int) -> Unit
+    setOnClickListener: (name: String) -> Unit
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        onClick = { setOnClickListener(groundModel.id) }
+        onClick = { setOnClickListener(groundModel.name) }
     ) {
         Box(
             modifier = Modifier
