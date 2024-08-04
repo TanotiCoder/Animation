@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Sports Ground"
+rootProject.name = "Animation-Jetpack"
 include(":app")
  

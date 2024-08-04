@@ -17,6 +17,7 @@ import com.example.sportsground.ui.grounds.footballGround.FootballGround
 import com.example.sportsground.ui.home.HomeRoute
 import com.example.sportsground.ui.home.HomeViewModel
 import com.example.sportsground.ui.parallax.Parallax
+import com.example.sportsground.ui.parallax.Parallax2
 import com.example.sportsground.ui.theme.SportsGroundTheme
 
 @Composable
@@ -65,6 +66,10 @@ fun GroundNavGraph(
 
         composable(GroundData[2].name) {
             Parallax()
+        }
+
+        composable(GroundData[3].name) {
+            Parallax2()
         }
     }
 }
