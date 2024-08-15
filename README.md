@@ -10,3 +10,5 @@
 --------
 ## Parallax-1
 https://github.com/user-attachments/assets/b96d1e07-ddc4-4f34-a233-1a9a1099c381
+## Parallax-2
+https://github.com/user-attachments/assets/9eaa4e8f-26fc-4e2c-a15e-06a9f5febc5c
